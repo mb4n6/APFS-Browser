@@ -1,0 +1,13 @@
+# Python Requirements
+# This tool uses only Python standard library
+
+# Python version requirement
+python_requires>=3.7
+
+# External dependencies (must be installed separately):
+# - SleuthKit (brew install sleuthkit / apt-get install sleuthkit)
+#   Required tools: sigfind, fsstat, fls, icat, istat, pstat
+# - xmount (for AFF4 conversion)
+#   brew install xmount / apt-get install xmount
+
+# No Python packages required - only standard library
