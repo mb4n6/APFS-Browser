@@ -365,13 +365,6 @@ This tool is provided for educational and forensic research purposes.
 Use only on systems you own or have explicit authorization to examine.
 It is not a replacement for certified forensic software and must not be used in operational casework or legal evidence processing.
 
-## Credits
-
-Built on top of:
-- **SleuthKit** by Brian Carrier
-- **APFS specification** documentation
-- **Cellebrite Digital Collector** insights
-
 ## References
 
 - [SleuthKit Documentation](https://www.sleuthkit.org/sleuthkit/)
