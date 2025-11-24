@@ -15,12 +15,12 @@ This tool addresses a specific challenge when working with Cellebrite Digital Co
 
 ### Background
 
-When Cellebrite Digital Collector creates an AFF4 acquisition of a Mac with FileVault enabled:
+When (Cellebrite) Digital Collector creates an AFF4 acquisition of a Mac with FileVault enabled:
 
 1. **During acquisition**: The data is decrypted (hardware-assisted decryption)
 2. **In the image**: The actual data blocks are in plaintext
 3. **In metadata**: The filesystem flags still indicate "encrypted" status
-4. **Result**: A paradox - decrypted data with encrypted flags
+4. **Result**: A paradox - decrypted data with encrypted flags. Which is beneficial from a forensic perspective, as it minimizes alterations to the original device.
 
 ### Technical Details
 
