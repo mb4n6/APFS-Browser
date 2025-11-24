@@ -142,13 +142,13 @@ python3 --version
 
 ```bash
 # Clone or download this repository
-cd apfs_cellebrite_browser
+cd APFS_browser
 
 # Make executable (optional)
-chmod +x apfs_cellebrite_tool.py
+chmod +x apfs_browser.py
 
 # Run
-python3 apfs_cellebrite_tool.py
+python3 apfs_browser.py
 ```
 ## Easy Mounting
 
@@ -171,10 +171,10 @@ xmount --in aff4 /path/to/acquisition.aff4 /mnt/point
 ### Step 2: Launch Tool
 
 ```bash
-python3 apfs_cellebrite_tool.py
+python3 apfs_browser.py
 
 # Or with direct image/block
-python3 apfs_cellebrite_tool.py -i /mnt/point/image.dd -B 1155171
+python3 apfs_browser.py -i /mnt/point/image.dd -B 1155171
 ```
 
 ### Step 3: Scan for Volumes
@@ -208,7 +208,7 @@ python3 apfs_cellebrite_tool.py -i /mnt/point/image.dd -B 1155171
 xmount --in aff4 case_2025.aff4 /mnt/forensics
 
 # 2. Launch tool
-python3 apfs_cellebrite_tool.py
+python3 apfs_browser.py
 
 # 3. In GUI:
 #    - Open Image: /mnt/forensics/case_2025.dd
@@ -225,7 +225,7 @@ python3 apfs_cellebrite_tool.py
 If you already know the APSB block number:
 
 ```bash
-python3 apfs_cellebrite_tool.py -i /mnt/forensics/image.dd -B 1155171
+python3 apfs_browser.py -i /mnt/forensics/image.dd -B 1155171
 ```
 
 This opens directly in browser mode.
@@ -308,62 +308,6 @@ Offset  Size  Description
 - Configurable start, end, step
 - Slower but no dependencies
 - Useful for specific ranges
-
-### Why Step Size Matters
-
-```python
-# Step = 1: Check every block (slow but thorough)
-# Step = 8: Check every 8th block (8x faster)
-# Step = 16: Check every 16th block (16x faster)
-
-# APFS volumes are usually well-aligned
-# Step = 8 is a good balance
-```
-
-## Troubleshooting
-
-### "sigfind not found"
-
-```bash
-# Check installation
-which sigfind
-
-# Install SleuthKit
-brew install sleuthkit  # macOS
-sudo apt-get install sleuthkit  # Linux
-```
-
-### "fls failed"
-
-- Verify block number is correct
-- Try different block from scan results
-- Check if image is corrupted
-
-### No Volumes Found
-
-1. Try both scan methods (sigfind and internal)
-2. Reduce step size for internal scan
-3. Try "Try pstat" button
-4. Manually add known block numbers
-
-### Password Prompt on Mount
-
-This is the exact problem this tool solves! Use the tool instead of mounting.
-
-## Limitations
-
-- **Read-only**: This tool only reads data, cannot modify
-- **APFS only**: Designed specifically for APFS filesystems
-- **Performance**: Large volumes may take time to scan
-- **Dependencies**: Requires SleuthKit tools
-
-## Best Practices
-
-1. **Always validate**: Use fsstat to verify found blocks
-2. **Multiple methods**: Try both sigfind and internal scanning
-3. **Document findings**: Note which volumes you access
-4. **Verify exports**: Check exported files for completeness
-5. **Legal compliance**: Only use on authorized images
 
 ## License
 
