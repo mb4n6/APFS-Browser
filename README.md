@@ -150,6 +150,12 @@ chmod +x apfs_cellebrite_tool.py
 # Run
 python3 apfs_cellebrite_tool.py
 ```
+## Easy Mounting
+
+```bash
+# Use xmounter
+python3 xmounter_gui.py
+```
 
 ## Workflow
 
