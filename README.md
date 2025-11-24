@@ -1,6 +1,6 @@
 # APFS Browser Tool
 
-Educational tool for working with Cellebrite AFF4 acquisitions of macOS systems that exhibit the "encrypted flags paradox."
+Educational tool for working with (Cellebrite) AFF4 acquisitions of macOS systems that exhibit the "encrypted flags paradox."
 
 ## Authors
 
